@@ -19,8 +19,7 @@ $22,000 or more 16%
 #include <iomanip>
 using namespace std;
 
-int main()
-{
+
     //calculate commission and return commission rate
     double calculateCommissionrate(double sales) {
         if (sales < 10000)
@@ -35,7 +34,7 @@ int main()
             return 0.16;
 
     }
-    void displayResults(double sales, double commissionrate, double commission, double advancePay) {
+    void displayResults(double sales, double commissionRate, double commission, double advancePay, double remainingPay) {
         double remainpay = commission - advancePay;
 
         cout << fixed << setprecision(2);
@@ -47,7 +46,7 @@ int main()
         cout << "Advanced Pay: $" << advancePay << endl;
 
         if (remainingPay >= 0)
-            cout << "Remaining Pay: $" << remaingPay << endl;
+            cout << "Remaining Pay: $" << remainingPay << endl;
         else
             cout << "Amount to reimburse Crazy Al's: $" << -remainingPay << endl;
     }
@@ -64,10 +63,13 @@ int main()
 
         //calculate
         double commissionRate = calculateCommissionrate(sales);
-        double commission = sales * commissionrate;
+        double commission = sales * commissionRate;
+
+        //calculate
+        double remainingPay = commission - advancePay;
 
         //Display the results
-        displayresults(sales, commissionrate, commission, advancePay);
+        displayResults (sales, commissionRate, commission, advancePay, remainingPay);
 
         return 0;
 
@@ -77,23 +79,6 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
 
 
 
